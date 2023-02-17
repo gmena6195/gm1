@@ -19,6 +19,7 @@ def products(request):
 
 
 def customer(request):
-    return render(request,'accounts/customer.html')
+    query_results = tag.objects.all()
 
-
+    context = {'tag':query_results}
+    return render(request,'accounts/customer.html',context)
